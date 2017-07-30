@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+
+	<f:facet name="first">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport"
+			content="user-scalable=no, width=device-width,initial-scale=1.0,maximum-scale=1.0" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<!-- Custom Css -->
+	</f:facet>
+	<title>Prueba humanbpo</title>
+	<!-- Google Fonts -->
+	<link
+		href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=latin,cyrillic-ext"
+		rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+		rel="stylesheet" type="text/css" />
+	<!-- Bootstrap Core Css -->
+	<h:outputStylesheet library="css" name="bootstrap.css" />
+</h:head>
+
+<h:body>
+	<div class="container">
+		<div class="row">
+			<h1>Prueba Cube Summation</h1>
+		</div>
+		<p:growl id="growl" life="3000" />
+		<div class="row">
+			<h:form id="formId">
+				<div class="col-md-6">
+				<h2>Ingresa la prueba</h2>
+				<p:inputTextarea value="#{indexBean.input}" cols="50" rows="10"/>
+				<p:commandButton value="Calcular" actionListener="#{indexBean.calcularListener}" update="outputId" ajax="true"/>
+				</div>
+				<div class="col-md-6">
+					<h2>Resultado</h2>
+					<p:outputLabel id="outputId" value="#{indexBean.output}"/>
+					</div>
+			</h:form>
+		</div>
+	</div>
+	<h:outputScript library="js" name="bootstrap.js" />
+</h:body>
+
+
+</html>
